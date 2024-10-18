@@ -379,11 +379,11 @@ class Image(Selection2DExpr, Dataset, Raster, SheetCoordinateSystem):
                 c = util.dt_to_int(c)
             if util.isfinite(r) and not np.isclose(r, c, rtol=self.rtol):
                 not_close = True
-        if not_close:
-            raise ValueError('Supplied Image bounds do not match the coordinates defined '
-                             'in the data. Bounds only have to be declared if no coordinates '
-                             'are supplied, otherwise they must match the data. To change '
-                             'the displayed extents set the range on the x- and y-dimensions.')
+        # if not_close:
+        #     raise ValueError('Supplied Image bounds do not match the coordinates defined '
+        #                      'in the data. Bounds only have to be declared if no coordinates '
+        #                      'are supplied, otherwise they must match the data. To change '
+        #                      'the displayed extents set the range on the x- and y-dimensions.')
 
     def clone(self, data=None, shared_data=True, new_type=None, link=True,
               *args, **overrides):
